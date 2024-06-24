@@ -5,9 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import com.github.javafaker.Faker;
-
 import java.util.Locale;
-import java.util.Random;
 
 public class DataGen {
     private DataGen() {

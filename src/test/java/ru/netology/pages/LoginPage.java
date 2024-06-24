@@ -12,9 +12,10 @@ public class LoginPage {
     private SelenideElement loginField = $("[data-test-id=login] input");
     private SelenideElement passwordField = $("[data-test-id=password] input");
     private SelenideElement loginButton = $("[data-test-id=action-login]");
-    private SelenideElement error = $("[data-test-id=error-notification] .notification");
+    private SelenideElement error = $("[data-test-id=error-notification] .notification__content");
 
     public void errorNotification(String expText) {
+
         error.shouldHave(exactText(expText)).shouldBe(visible);
     }
 

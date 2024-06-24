@@ -27,7 +27,7 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static void cleanDB() {
+    public static void cleanDB() throws SQLException {
         var conn = getConnection();
         queryRunner.execute(conn, "DELETE FROM auth_codes");
         queryRunner.execute(conn, "DELETE FROM card_transactions");

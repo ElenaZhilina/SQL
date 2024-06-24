@@ -8,6 +8,8 @@ import ru.netology.data.SQLHelper;
 import ru.netology.pages.LoginPage;
 
 
+import java.sql.SQLException;
+
 import static com.codeborne.selenide.Selenide.open;
 import static ru.netology.data.SQLHelper.cleanCode;
 import static ru.netology.data.SQLHelper.cleanDB;
@@ -27,7 +29,7 @@ public class LoginTest {
     }
 
     @AfterAll
-    static void tearDownAll() {
+    static void tearDownAll() throws SQLException {
         cleanDB();
     }
 
@@ -53,7 +55,7 @@ public class LoginTest {
         var verificationPage = loginPage.validLogin(userInfo);
         verificationPage.verificationPageVisibility();
         var verificationCode = DataGen.randomCode();
-        verificationPage.verify(verificationCode.getCode());
+        verificationPage.validVerify(verificationCode.toString());
         verificationPage.errorNotification("Ошибка! \nНеверно указан код! Попробуйте ещё раз.");
     }
 }
