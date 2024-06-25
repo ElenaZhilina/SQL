@@ -55,7 +55,7 @@ public class LoginTest {
         var verificationPage = loginPage.validLogin(userInfo);
         verificationPage.verificationPageVisibility();
         var verificationCode = DataGen.randomCode();
-        verificationPage.validVerify(verificationCode.toString());
+        verificationPage.verify(verificationCode.toString());
         verificationPage.errorNotification("Ошибка! \nНеверно указан код! Попробуйте ещё раз.");
     }
 }
